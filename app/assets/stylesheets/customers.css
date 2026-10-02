@@ -34,6 +34,12 @@
   color: #68738a;
 }
 
+.customer-registration__helper {
+  margin: 12px 0 0;
+  color: #59657f;
+  font-size: 0.95rem;
+}
+
 .customer-registration__card {
   padding: clamp(24px, 5vw, 42px);
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -188,6 +194,11 @@
   background: #6425c0;
 }
 
+.customer-page__new-link--inline {
+  display: inline-block;
+  margin-top: 8px;
+}
+
 .customer-page__toolbar {
   display: flex;
   gap: 12px;
@@ -303,6 +314,43 @@
 .customer-page__page-number {
   color: #68738a;
   font-size: 0.95rem;
+}
+
+.customer-page__empty-state {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 28px;
+  border: 1px dashed #d7caf8;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  text-align: center;
+  color: #4a5368;
+}
+
+.customer-page__empty-state h2 {
+  margin: 0 0 10px;
+  color: #3a2a74;
+}
+
+.customer-page__empty-state p {
+  margin: 0;
+  color: #5d6981;
+}
+
+.flash {
+  padding: 14px 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.flash--notice {
+  background: #eafaf1;
+  color: #17613d;
+}
+
+.flash--alert {
+  background: #fff4f2;
+  color: #9c2d2d;
 }
 
 @media (max-width: 600px) {

@@ -19,41 +19,49 @@
     <p class="customer-page__count" data-customers-target="count"><%= pluralize(@customers.size, "customer") %></p>
   </div>
 
-  <section class="customer-page__grid" data-customers-target="grid">
-    <% @customers.each do |customer| %>
-      <article
-        class="customer-list-card"
-        data-search="<%= [customer.full_name, customer.id_number, customer.phone].join(' ').downcase %>"
-        data-customers-target="card"
-      >
-        <div class="customer-list-card__header">
-          <h3><%= customer.full_name %></h3>
-        </div>
-        <div class="customer-list-card__details">
-          <p><strong>ID:</strong> <%= customer.id_number %></p>
-          <p><strong>Date of Birth:</strong> <%= customer.date_of_birth %></p>
-          <p><strong>Phone:</strong> <%= customer.phone %></p>
-
-          <%= link_to "Delete",
-              customer_path(customer),
-              data: {
-                turbo_method: :delete,
-                turbo_confirm: "Are you sure you want to delete this customer?"
-              },
-              class: "button danger customer-list-card__delete" %>
-
-          <div class="customer-list-card__document">
-            <% if customer.id_document.attached? %>
-              <p><strong>ID Document</strong></p>
-              <%= image_tag customer.id_document, alt: "ID document for #{customer.full_name}" %>
-            <% else %>
-              <p class="customer-list-card__empty-document">No ID document uploaded.</p>
-            <% end %>
+  <% if @customers.any? %>
+    <section class="customer-page__grid" data-customers-target="grid">
+      <% @customers.each do |customer| %>
+        <article
+          class="customer-list-card"
+          data-search="<%= [customer.full_name, customer.id_number, customer.phone].join(' ').downcase %>"
+          data-customers-target="card"
+        >
+          <div class="customer-list-card__header">
+            <h3><%= customer.full_name %></h3>
           </div>
-        </div>
-      </article>
-    <% end %>
-  </section>
+          <div class="customer-list-card__details">
+            <p><strong>ID:</strong> <%= customer.id_number %></p>
+            <p><strong>Date of Birth:</strong> <%= customer.date_of_birth %></p>
+            <p><strong>Phone:</strong> <%= customer.phone %></p>
+
+            <%= link_to "Delete",
+                customer_path(customer),
+                data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure you want to delete this customer?"
+                },
+                class: "button danger customer-list-card__delete" %>
+
+            <div class="customer-list-card__document">
+              <% if customer.id_document.attached? %>
+                <p><strong>ID Document</strong></p>
+                <%= image_tag customer.id_document, alt: "ID document for #{customer.full_name}" %>
+              <% else %>
+                <p class="customer-list-card__empty-document">No ID document uploaded.</p>
+              <% end %>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    </section>
+  <% else %>
+    <section class="customer-page__empty-state" aria-live="polite">
+      <h2>No customers yet</h2>
+      <p>Start by adding your first customer profile.</p>
+      <%= link_to "Register Customer", new_customer_path, class: "customer-page__new-link customer-page__new-link--inline" %>
+    </section>
+  <% end %>
 
   <nav class="customer-page__pagination" aria-label="Customer pages">
     <button type="button" data-customers-target="previous" data-action="click->customers#previous">Previous</button>

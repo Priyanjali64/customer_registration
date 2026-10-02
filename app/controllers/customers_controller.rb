@@ -1,6 +1,8 @@
 class CustomersController < ApplicationController
+  before_action :set_customer, only: :destroy
+
   def index
-    @customers = Customer.all
+    @customers = Customer.order(created_at: :desc)
   end
 
   def new
@@ -18,13 +20,16 @@ class CustomersController < ApplicationController
   end
 
   def destroy
-    @customer = Customer.find(params[:id])
     @customer.destroy
 
     redirect_to customers_path, notice: "Customer deleted successfully."
   end
 
   private
+
+  def set_customer
+    @customer = Customer.find(params[:id])
+  end
 
   def customer_params
     params.require(:customer).permit(

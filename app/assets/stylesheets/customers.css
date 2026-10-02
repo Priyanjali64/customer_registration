@@ -1,0 +1,349 @@
+.customer-registration {
+  min-height: 100vh;
+  padding: 48px 20px;
+  background: linear-gradient(135deg, #f5f7ff, #eefaf8);
+  color: #172033;
+}
+
+.customer-registration__shell {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.customer-registration__heading {
+  margin-bottom: 24px;
+}
+
+.customer-registration__eyebrow {
+  margin: 0 0 8px;
+  color: #5965d8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.customer-registration h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.customer-registration__subtitle {
+  margin: 10px 0 0;
+  color: #68738a;
+}
+
+.customer-registration__card {
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 20px 60px rgba(45, 55, 100, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.customer-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group--wide,
+.form-actions {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  color: #35405a;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #dce1ed;
+  border-radius: 12px;
+  padding: 13px 14px;
+  background: #fbfcff;
+  color: #172033;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #5965d8;
+  box-shadow: 0 0 0 4px rgba(89, 101, 216, 0.12);
+}
+
+.form-group input[type="file"] {
+  padding: 10px;
+  border-style: dashed;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid #edf0f6;
+}
+
+.form-actions input,
+.form-actions .button {
+  border: 0;
+  border-radius: 11px;
+  padding: 13px 20px;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-actions input {
+  background: #5965d8;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(89, 101, 216, 0.24);
+}
+
+.form-actions .button.secondary {
+  background: #eef0f7;
+  color: #4d5870;
+}
+
+.form-errors {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid #f4c7c7;
+  border-radius: 12px;
+  background: #fff5f5;
+  color: #8b2f2f;
+}
+
+.form-errors strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-errors ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.customer-page {
+  min-height: 100vh;
+  padding: 48px 24px;
+  color: #24304a;
+  background: linear-gradient(135deg, #f6f0ff, #e8f9ff);
+  font-family: Arial, sans-serif;
+}
+
+.customer-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 32px;
+}
+
+.customer-page__header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #5527a5;
+}
+
+.customer-page__header p {
+  margin: 8px 0 0;
+  color: #68738a;
+}
+
+.customer-page__new-link {
+  padding: 13px 20px;
+  border-radius: 12px;
+  color: #fff;
+  background: #7c3aed;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.26);
+}
+
+.customer-page__new-link:hover {
+  background: #6425c0;
+}
+
+.customer-page__toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 22px;
+}
+
+.customer-page__search {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  border: 1px solid #d9d5e8;
+  border-radius: 12px;
+  color: #24304a;
+  background: #fff;
+  font-size: 1rem;
+}
+
+.customer-page__count {
+  margin: 0;
+  color: #68738a;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.customer-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.customer-list-card {
+  overflow: hidden;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 30px rgba(57, 70, 132, 0.1);
+}
+
+.customer-list-card__header {
+  padding: 22px;
+  background: linear-gradient(135deg, #ede3ff, #dff8ff);
+}
+
+.customer-list-card__header h3 {
+  margin: 0;
+  color: #402080;
+  font-size: 1.3rem;
+}
+
+.customer-list-card__details {
+  padding: 18px 22px;
+}
+
+.customer-list-card__details p {
+  margin: 10px 0;
+  color: #5e6980;
+}
+
+.customer-list-card__details strong {
+  color: #283653;
+}
+
+.customer-list-card__delete {
+  display: inline-block;
+  margin: 10px 0 0;
+}
+
+.customer-list-card__document {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #e9e5f3;
+}
+
+.customer-list-card__document img {
+  display: block;
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.customer-list-card__empty-document {
+  color: #9a6b22 !important;
+}
+
+.customer-page__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 28px auto 0;
+}
+
+.customer-page__pagination button {
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  background: #7c3aed;
+  cursor: pointer;
+}
+
+.customer-page__pagination button:disabled {
+  background: #c8c2d8;
+  cursor: not-allowed;
+}
+
+.customer-page__page-number {
+  color: #68738a;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .customer-registration {
+    padding: 28px 14px;
+  }
+
+  .customer-form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .form-group--wide,
+  .form-actions {
+    grid-column: auto;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .form-actions input,
+  .form-actions .button {
+    text-align: center;
+  }
+
+  .customer-page__header {
+    display: block;
+  }
+
+  .customer-page__new-link {
+    display: inline-block;
+    margin-top: 18px;
+  }
+
+  .customer-page__toolbar {
+    display: block;
+  }
+
+  .customer-page__count {
+    margin-top: 9px;
+  }
+}

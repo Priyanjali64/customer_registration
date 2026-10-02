@@ -1,24 +1,18 @@
-# README
+# Customer Registration
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails application for registering and managing customer records with file upload validation.
 
-Things you may want to cover:
+## Features
+- register customers with personal details
+- upload a PNG or JPEG ID document
+- view all registered customers
+- delete customer records
+- basic search and pagination on the customer list
 
-* Ruby version
+## Setup
+1. bundle install
+2. rails db:create db:migrate
+3. rails server
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Tests
+- bundle exec rails test
